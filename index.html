@@ -244,6 +244,17 @@
 
                 let row = lines[i].trim()
 
+                if (row.includes("[.]")) {
+                    alert("🤔 Erreur : des lignes contiennes des \"[.]\" ce qui est un format invalide pour ATP.\n\nVeuillez corriger vos lignes en remplaçant par des points.")
+                    return
+                }
+
+                if (row.includes("onion")) {
+                    alert("🤔 Erreur : des lignes contiennes des URL \"onion\" du dark web, ce qui est un format invalide pour ATP.\n\nVeuillez corriger vos lignes en supprimant les URL onion.")
+                    return 
+                }
+
+
                 // Has a separator
                 if (row.includes(",") || row.includes(";")) {
                     
